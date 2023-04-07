@@ -11,91 +11,132 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+    <link rel="stylesheet" href="summernoteLiteDark.css">
+
 </head>
 
 <body>
 
     <div class="boxSuspenso">
-        <h1 id="tituloSite">Gerador de retornos ao cliente</h1>
+        <h1 id="tituloSite">GERADOR DE RETORNO</h1>
+        <nav>
+            <ul>
+                <li><a href="#">por quê?</a></li>
+                <li><a href="#">mensagens</a></li>
+                <li><a href="#">solicitar</a></li>
+            </ul>
+        </nav>
 
         <div class="config">
 
-            <h2>Variáveis de configuração:</h2>
+            <div id="configBoxes">
 
-            <div class="configInput">
+                <h2 class="tituloVariaveis">Variáveis de configuração <input id="esconderBotao" type="button"
+                        value="Esconder" onclick="esconderVariavel()"></h2>
 
-                <div class="configInputTitle">
-                    <h2>Sexo do destinatário:</h2>
-                    <div class="configInputBox">
-                        <input type="radio" name="masculino" id="masculino" value="masculino">
-                        <label for="masculino">Masculino</label>
-                        <input type="radio" name="feminino" id="feminino" value="feminino">
-                        <label for="feminino">Feminino</label>
+                <div id="configInput" class="configInput">
+
+                    <div class="configInputTitle">
+                        <h2>Sexo do destinatário:</h2>
+                        <div class="configInputBox">
+                            <input type="radio" name="masculino" id="masculino" value="masculino">
+                            <label for="masculino">Masculino</label>
+                            <input type="radio" name="feminino" id="feminino" value="feminino">
+                            <label for="feminino">Feminino</label>
+                        </div>
                     </div>
+
+                    <div class="configInputTitle">
+                        <h2>Nome do destinatário:</h2>
+                        <div class="configInputBox">
+                            <input class="inputTexto" type="text" name="nome" id="nome" size="30">
+                        </div>
+                    </div>
+
+                    <div class="configInputTitle">
+                        <h2>Horário do e-mail:</h2>
+                        <div class="configInputBox">
+                            <input type="radio" name="manha" id="manha" value="manha">
+                            <label for="masculino">Manhã</label>
+                            <input type="radio" name="tarde" id="tarde" value="tarde">
+                            <label for="feminino">Tarde</label>
+                            <input type="radio" name="noite" id="noite" value="noite">
+                            <label for="feminino">Noite</label>
+                        </div>
+                    </div>
+
+                    <div class="configInputTitle">
+                        <h2>Incluir finalização:</h2>
+                        <div class="configInputBox">
+                            <input type="radio" name="fsim" id="fsim" value="sim">
+                            <label for="masculino">Sim</label>
+                            <input type="radio" name="fnao" id="fnao" value="nao">
+                            <label for="feminino">Não</label>
+                        </div>
+                    </div>
+
+                    <div class="configInputTitle">
+                        <h2>Incluir alerta que fechara sem retorno:</h2>
+                        <div class="configInputBox">
+                            <input type="radio" name="avisoSim" id="avisoSim" value="sim">
+                            <label for="masculino">Sim</label>
+                            <input type="radio" name="avisoNao" id="avisoNao" value="nao">
+                            <label for="feminino">Não</label>
+                        </div>
+                    </div>
+
+                    <div class="configInputTitle">
+                        <h2>Tipo de mensagem:</h2>
+                        <div class="configInputBox">
+                            <input autocomplete="off" class="inputTexto" size="40" list="tipoMensagem" name="" id="">
+                            <datalist id="tipoMensagem">
+                                <option value="Primeiro retorno"></option>
+                                <option value="Cobrar retorno cliente [genérico]"></option>
+                                <option value="Cobrar retorno valido"></option>
+                                <option value="Cobrar mais info"></option>
+                                <option value="Fechar sem retorno"></option>
+                                <option value="Fechar oc simples"></option>
+                                <option value=""></option>
+                            </datalist>
+                        </div>
+                    </div>
+
+
                 </div>
 
-                <div class="configInputTitle">
-                    <h2>Nome do destinatário:</h2>
-                    <div class="configInputBox">
-                        <input type="text" name="nome" id="nome">
-                    </div>
-                </div>
-
-                <div class="configInputTitle">
-                    <h2>Horário do e-mail:</h2>
-                    <div class="configInputBox">
-                        <input type="radio" name="manha" id="manha" value="manha">
-                        <label for="masculino">Manhã</label>
-                        <input type="radio" name="tarde" id="tarde" value="tarde">
-                        <label for="feminino">Tarde</label>
-                        <input type="radio" name="noite" id="noite" value="noite">
-                        <label for="feminino">Noite</label>
-                    </div>
+                <div id="botoesGerador" class="botoesGerador">
+                    <input id="gerar" type="button" value="Gerar" onclick="esconderVariavel()">
+                    <input id="resetar" type="button" value="Resetar" onclick="esconderVariavel()">
                 </div>
 
             </div>
         </div>
-
-        <div class="mensagemBox">
-
-            <div class="mensagemBoxUnit">
-                <div class="mensagemBoxTitle">
-
-                </div>
-                <div class="mensagemBoxContent">
-
-                </div>
-            </div>
-
-            <div class="mensagemBoxUnit">
-                <div class="mensagemBoxTitle">
-
-                </div>
-                <div class="mensagemBoxContent">
-
-                </div>
-            </div>
-
-            <div class="mensagemBoxUnit">
-                <div class="mensagemBoxTitle">
-
-                </div>
-                <div class="mensagemBoxContent">
-
-                </div>
-            </div>
+    </div>
 
 
+    <h2 class="tituloRetorno">RETORNO 👍</h2>
+    <div class="boxEditor">
+        <div id="summernote"></div>
+        <input type="button" name="chatGpt" id="chatGpt" value="Enviar ao ChatGpt">
+    </div>
 
-
-
-
-
-
-
-        </div>
-
+    <script>
+        $(document).ready(function () {
+            $('#summernote').summernote({
+                placeholder: 'O texto gerado vira para aqui.',
+                tabsize: 2,
+                height: 500,
+            });
+            document.getElementById("configInput").style.display = 'flex'
+        });
+    </script>
 </body>
 
 </html>
