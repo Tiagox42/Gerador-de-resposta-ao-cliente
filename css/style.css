@@ -85,6 +85,13 @@ nav a:hover{
     flex-wrap: wrap;
 }
 
+form {
+    display: flex;
+    flex-direction: row;
+    max-height: 25vh;
+    flex-wrap: wrap;
+}
+
 .configInputTitle {
     background-color: rgba(102, 102, 102, 0.356);
     border-radius: 15px;
