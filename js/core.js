@@ -33,7 +33,13 @@ let retornoFinal;
 
 function gerarRetorno() {
 
-    console.log(iNome)
+    console.log(vSexo)
+    console.log(vNome)
+    console.log(vHorario)
+    console.log(vIncFinalizacao)
+    console.log(vIncFecharaSemRetorno)
+    console.log(vTipoMensagem)
+    console.log(vContexto)
 }
 
 function verificaCampos() {
@@ -42,14 +48,11 @@ function verificaCampos() {
     iSexoF = document.getElementById('feminino').checked;
     if (iSexoM == true) {
         vSexo = 'masculino'
-    } else {
+    } else if (iSexoF == true) {
         vSexo = 'feminino'
     };
     //Nome
-    iNome = document.getElementById('nome').value;
-    if (iNome == '') {
-        iNome = 'Prezado';
-    }
+    vNome = document.getElementById('nome').value;
     //Horario
     iHmanha = document.getElementById('manha').checked;
     iHtarde = document.getElementById('tarde').checked;
@@ -61,4 +64,8 @@ function verificaCampos() {
     } else if (iHnoite == true) {
         vHorario = 'boa noite!'
     }
+    //Incluir Finalização
+    vIncFinalizacao = document.getElementById('fsim').checked ? true:false;
+    //Incluir Fechara sem retorno
+    vIncFecharaSemRetorno = document.getElementById('avisoSim').checked ? true:false;
 }
