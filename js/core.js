@@ -39,6 +39,7 @@ function gerarRetorno() {
     console.log(vIncFinalizacao)
     console.log(vIncFecharaSemRetorno)
     console.log(vTipoMensagem)
+    console.log('tipo mens acima');
     console.log(vContexto)
 }
 
@@ -68,4 +69,8 @@ function verificaCampos() {
     vIncFinalizacao = document.getElementById('fsim').checked ? true:false;
     //Incluir Fechara sem retorno
     vIncFecharaSemRetorno = document.getElementById('avisoSim').checked ? true:false;
+    //Tipo de mensagem
+    vTipoMensagem = document.getElementById('tipoInput').value;
+    //Marcar contexto
+    vContexto = document.getElementById('cSim').checked ? true:false;
 }
