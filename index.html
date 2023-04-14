@@ -36,6 +36,7 @@
 
         <input type="button" value="VERIRIFICA" onclick="verificaCampos()">
         <input type="button" value="CONSOLE" onclick="gerarRetorno()">
+        <input type="button" value="TESTE 3" onclick="teste3()">
 
         <div class="config">
 
@@ -46,7 +47,7 @@
 
                 <div id="configInput" class="configInput">
 
-                    <form id="variaveis" action="">
+                    <form id="variaveis" action="" onsubmit="return false">
 
                         <div class="configInputTitle">
                             <h2>Sexo do destinatário:</h2>
@@ -61,7 +62,8 @@
                         <div class="configInputTitle">
                             <h2>Nome do destinatário:</h2>
                             <div class="configInputBox">
-                                <input class="inputTexto" type="text" name="nome" id="nome" size="30" value="Prezado" placeholder="">
+                                <input class="inputTexto" type="text" name="nome" id="nome" size="30" value="Prezado"
+                                    placeholder="">
                             </div>
                         </div>
 
@@ -123,8 +125,6 @@
                                 <label for="cNao">Não</label>
                             </div>
                         </div>
-                        
-                
 
                     </form>
 
@@ -132,8 +132,8 @@
                 </div>
 
                 <div id="botoesGerador" class="botoesGerador">
-                    <input id="gerar" type="submit" form="variaveis" value="Gerar" onclick=""  >
-                    <input id="resetar" type="reset" form="variaveis" value="Resetar">
+                    <input id="gerar" form="variaveis" type="submit" value="Gerar" onclick="processar()">
+                    <input id="resetar" type="reset" form="variaveis" onclick="limpaBloco()" value="Resetar">
                 </div>
 
             </div>
@@ -151,7 +151,7 @@
     <script>
         $(document).ready(function () {
             $('#summernote').summernote({
-                placeholder: 'O texto gerado vira para aqui.',
+                placeholder: 'Seu texto gerado aparecerá aqui.',
                 tabsize: 2,
                 height: 500,
 

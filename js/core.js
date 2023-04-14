@@ -10,18 +10,6 @@ function esconderVariavel() {
     }
 }
 
-let lorep = 'Contrary to \npopular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.';
-
-var HTMLstring = '<p>Hello, world</p><p>Summernote can insert HTML string</p>';
-
-function teste1() {
-    $('#summernote').summernote('insertText', lorep);
-}
-
-function teste2() {
-    $('#summernote').summernote('pasteHTML', semRetornoCliente);
-}
-
 let vSexo;
 let vNome;
 let vHorario;
@@ -29,7 +17,10 @@ let vIncFinalizacao;
 let vIncFecharaSemRetorno;
 let vTipoMensagem;
 let vContexto;
-let retornoFinal;
+
+function limpaBloco() {
+    $('#summernote').summernote('reset');
+}
 
 function gerarRetorno() {
 
@@ -44,13 +35,13 @@ function gerarRetorno() {
 }
 
 function verificaCampos() {
+
     //Sexo
-    iSexoM = document.getElementById('masculino').checked;
     iSexoF = document.getElementById('feminino').checked;
-    if (iSexoM == true) {
-        vSexo = 'masculino'
-    } else if (iSexoF == true) {
-        vSexo = 'feminino'
+    if (iSexoF == true) {
+        vSexo = 'a';
+    } else {
+        vSexo = 'o';
     };
     //Nome
     vNome = document.getElementById('nome').value;
@@ -66,11 +57,16 @@ function verificaCampos() {
         vHorario = 'boa noite!'
     }
     //Incluir Finalização
-    vIncFinalizacao = document.getElementById('fsim').checked ? true:false;
+    vIncFinalizacao = document.getElementById('fsim').checked ? true : false;
     //Incluir Fechara sem retorno
-    vIncFecharaSemRetorno = document.getElementById('avisoSim').checked ? true:false;
+    vIncFecharaSemRetorno = document.getElementById('avisoSim').checked ? true : false;
     //Tipo de mensagem
     vTipoMensagem = document.getElementById('tipoInput').value;
     //Marcar contexto
-    vContexto = document.getElementById('cSim').checked ? true:false;
+    vContexto = document.getElementById('cSim').checked ? true : false;
+}
+
+function processar() {
+    verificaCampos();
+    $('#summernote').summernote('pasteHTML', retornaMensagem(vSexo, vNome, vHorario, vIncFinalizacao, vIncFecharaSemRetorno, vTipoMensagem, vContexto));
 }
