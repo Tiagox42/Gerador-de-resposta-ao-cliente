@@ -35,10 +35,6 @@
             </ul>
         </nav>
 
-        <input type="button" value="VERIRIFICA" onclick="verificaCampos()">
-        <input type="button" value="CONSOLE" onclick="gerarRetorno()">
-        <input type="button" value="TESTE 3" onclick="teste3()">
-
         <div class="config">
 
             <div id="configBoxes">
@@ -106,7 +102,7 @@
                                 <input autocomplete="off" class="inputTexto" size="40" list="tipoMensagem" name=""
                                     id="tipoInput" required>
                                 <datalist id="tipoMensagem">
-                                    <option value="Primeiro retorno"></option>
+                                    <option value="Primeiro e-mail"></option>
                                     <option value="Cobrar retorno cliente [genérico]"></option>
                                     <option value="Cobrar retorno valido"></option>
                                     <option value="Cobrar mais info"></option>
@@ -149,6 +145,10 @@
         <input type="button" name="chatGpt" id="chatGpt" value="Enviar ao ChatGpt">
     </div>
 
+    <footer>
+        <p>All rights reserved | created by <a href="https://github.com/Tiagox42"><strong>Tiagox42</strong></a></p>
+    </footer>
+
     <script>
         $(document).ready(function () {
             $('#summernote').summernote({
@@ -160,6 +160,7 @@
             document.getElementById("configInput").style.display = 'flex'
         });
     </script>
+    
 </body>
 
 </html>
