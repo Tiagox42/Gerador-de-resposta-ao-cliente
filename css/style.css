@@ -19,6 +19,14 @@ body {
     margin-top: 50px;
 }
 
+.aviso {
+    font-size: 18px;
+    background-color: rgb(51, 211, 113);
+    font-weight: bold;
+    text-align: center;
+    color: rgb(46, 44, 44);
+}
+
 ul {
     list-style-type: none;
     text-align: center;

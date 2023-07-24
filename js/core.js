@@ -30,7 +30,6 @@ function gerarRetorno() {
     console.log(vIncFinalizacao)
     console.log(vIncFecharaSemRetorno)
     console.log(vTipoMensagem)
-    console.log('tipo mens acima');
     console.log(vContexto)
 }
 
@@ -46,6 +45,7 @@ function verificaCampos() {
     //Nome
     vNome = document.getElementById('nome').value;
     //Horario
+    vHorario = "";
     iHmanha = document.getElementById('manha').checked;
     iHtarde = document.getElementById('tarde').checked;
     iHnoite = document.getElementById('noite').checked;
